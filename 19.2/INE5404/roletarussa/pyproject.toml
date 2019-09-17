@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "roletarussa"
+version = "0.1.0"
+description = ""
+authors = ["João Vitor Maia <joaocampo2@hotmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pygame = "^1.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
