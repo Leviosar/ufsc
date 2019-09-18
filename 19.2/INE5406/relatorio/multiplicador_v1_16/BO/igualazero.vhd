@@ -9,5 +9,5 @@ END igualazero;
 
 ARCHITECTURE estrutura OF igualazero IS
 BEGIN
-	igual <= '1' WHEN A = "0000" ELSE '0';
+	igual <= '1' WHEN A = "0000000000000000" ELSE '0';
 END estrutura;

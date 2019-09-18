@@ -31,6 +31,6 @@ architecture behaviour of multiplicador_v1_4 is
   signal CP, CA, dec, Az, Bz, ini: std_logic;
   signal saiA, saiB: std_logic_vector(3 downto 0);
 begin
-  bo1: bo port map(clk => clock, ini => ini, CP => CP, CA => CA, dec => dec, entA => entA, entB => entB, Az => Az, Bz => Bz, saida => saida, conteudoA => saiA, conteudoB => saiB);
-  bc1: bc port map(reset => reset, clk => clock, inicio => inicio, Az => Az, Bz => Bz, pronto => pronto, ini => ini, CA => CA, dec => dec, CP => CP);
+  Datapath: bo port map(clk => clock, ini => ini, CP => CP, CA => CA, dec => dec, entA => entA, entB => entB, Az => Az, Bz => Bz, saida => saida, conteudoA => saiA, conteudoB => saiB);
+  Control: bc port map(reset => reset, clk => clock, inicio => inicio, Az => Az, Bz => Bz, pronto => pronto, ini => ini, CA => CA, dec => dec, CP => CP);
 end;

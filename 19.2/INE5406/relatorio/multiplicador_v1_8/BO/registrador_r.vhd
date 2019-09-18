@@ -13,7 +13,7 @@ BEGIN
 	PROCESS(clk, reset)
 	BEGIN
 		IF(reset = '1') THEN
-			q <= "0000";
+			q <= "00000000";
 		ELSIF(clk'EVENT AND clk = '1' AND carga = '1') THEN
 			q <= d;
 		END IF;

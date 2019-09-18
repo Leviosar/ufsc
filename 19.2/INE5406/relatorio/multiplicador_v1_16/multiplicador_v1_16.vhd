@@ -1,42 +1,36 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-USE ieee.std_logic_unsigned.all;
+library ieee;
+use ieee.std_logic_1164.all;
 
-ENTITY multiplicador_v1_4 IS
-    PORT (
-        clk, rst, start : IN STD_LOGIC;
-        entA, entB : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        ready : OUT STD_LOGIC;
-        saida : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
-    );
-END multiplicador_v1_4;
+entity multiplicador_v1_16 is
+  port(
+    inicio, reset, clock: in std_logic;
+    entA, entB: in std_logic_vector(15 downto 0);
+    pronto: out std_logic;
+    saida: out std_logic_vector(15 downto 0)
+  );
+end;
 
-ARCHITECTURE top_level OF multiplicador_v1_4 IS
-
-    SIGNAL conteudoA, conteudoB: STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL CA, CP, dec, Az, Bz, ini: STD_LOGIC;
-
-    COMPONENT bo IS 
-        PORT (
-            ini, CP, CA, dec : IN STD_LOGIC;
-            entA, entB : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            Az, Bz : OUT STD_LOGIC;
-            saida, conteudoA, conteudoB : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
-        );
-    END COMPONENT;
-
-    COMPONENT bc IS
-        PORT (
-            Reset, clk, inicio : IN STD_LOGIC;
-            Az, Bz : IN STD_LOGIC;
-            pronto : OUT STD_LOGIC;
-            ini, CA, dec, CP: OUT STD_LOGIC
-        );
-    END COMPONENT;
-
-BEGIN
-
-    Datapath: bo port map(start, CP, CA, dec, entA, entB, aZ, bZ, saida, conteudoA, conteudoB);
-    Controle: bc port map(rst, clk, start, Az, Bz, ready, ini, CA, dec, CP);
-
-END top_level;
+architecture behaviour of multiplicador_v1_16 is
+  component bc is
+  port(
+    Reset, clk, inicio: IN STD_LOGIC; 
+    Az, Bz: IN STD_LOGIC; 
+    pronto: OUT STD_LOGIC; 
+    ini, CA, dec, CP: OUT STD_LOGIC); 
+  end component;
+  
+  component bo is
+  port(
+    clk: IN STD_LOGIC; 
+    ini, CP, CA, dec: IN STD_LOGIC; 
+    entA, entB: IN STD_LOGIC_VECTOR(15 DOWNTO 0); 
+    Az, Bz: OUT STD_LOGIC; 
+    saida, conteudoA, conteudoB: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)); 
+  END component; 
+  
+  signal CP, CA, dec, Az, Bz, ini: std_logic;
+  signal saiA, saiB: std_logic_vector(15 downto 0);
+begin
+  Datapath: bo port map(clk => clock, ini => ini, CP => CP, CA => CA, dec => dec, entA => entA, entB => entB, Az => Az, Bz => Bz, saida => saida, conteudoA => saiA, conteudoB => saiB);
+  Control: bc port map(reset => reset, clk => clock, inicio => inicio, Az => Az, Bz => Bz, pronto => pronto, ini => ini, CA => CA, dec => dec, CP => CP);
+end;

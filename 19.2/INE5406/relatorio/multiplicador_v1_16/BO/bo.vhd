@@ -55,7 +55,7 @@ BEGIN
 	regA: registrador PORT MAP (clk, CA, saimux1, sairegA );
 	regB: registrador PORT MAP (clk, ini, entB, sairegB );
 	mux2: mux2para1 PORT MAP ( sairegP, sairegA, dec, saimux2 );	
-	mux3: mux2para1 PORT MAP ( sairegB, "0001", dec, saimux3 );
+	mux3: mux2para1 PORT MAP ( sairegB, "0000000000000001", dec, saimux3 );
 	somasub: somadorsubtrator PORT MAP (saimux2, saimux3, dec, saisomasub);
 	geraAz: igualazero PORT MAP ( sairegA, Az );
 	geraBz: igualazero PORT MAP ( sairegB, Bz );	
