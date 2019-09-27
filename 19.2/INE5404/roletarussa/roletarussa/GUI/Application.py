@@ -12,13 +12,6 @@ class Application(Frame):
     def __init__(self, master=None, roulette=None, game_controller=None):
         super().__init__(master=master)
         self.master = master
-        self.table_canvas = None
-        self.player_canvas = None
-        self.left_main = None
-        self.right_main = None
-        self.roulette_view = None
-        self.player_view = None
-        self.display = None
         self.game_controller = game_controller
         self.roulette_controller = roulette
         self.create_main()
@@ -31,8 +24,8 @@ class Application(Frame):
     def create_backbone(self):
         width = int(self.master.winfo_screenwidth())
         height = int(self.master.winfo_screenheight())
-        self.left_main = Frame(self.master, bg="#303030", width=int(width/3), height=height)
-        self.right_main = Frame(self.master, bg="#303030", width=int(width/3) * 2, height=height)
+        self.left_main: Frame = Frame(self.master, bg="#303030", width=int(width/3), height=height)
+        self.right_main: Frame = Frame(self.master, bg="#303030", width=int(width/3) * 2, height=height)
         self.left_main.grid(row=0, column=0)
         self.left_main.grid_propagate(0)
         self.right_main.grid(row=0, column=1)

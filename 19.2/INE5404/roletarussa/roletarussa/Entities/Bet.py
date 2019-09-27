@@ -7,9 +7,6 @@ class Bet():
         self.player = player
 
     def check_bet(self, result):
-        print(result)
-        print(self.type)
-        print(self.value)
 
         if self.type == 'number':
             if result['number'] == self.value:
