@@ -1,0 +1,62 @@
+[
+    {
+        "type": "single",
+        "numbers": true,
+        "payback": 35
+    },
+    {
+        "type": "split",
+        "numbers": true,
+        "payback": 17
+    },
+    {
+        "type": "line",
+        "numbers": true,
+        "payback": 11
+    },
+    {
+        "type": "square",
+        "numbers": true,
+        "payback": 8
+    },
+    {
+        "type": "double line",
+        "numbers": true,
+        "payback": 5
+    },
+    {
+        "type": "red",
+        "numbers": false,
+        "payback": 1
+    },
+    {
+        "type": "black",
+        "numbers": false,
+        "payback": 1
+    },
+    {
+        "type": "odd",
+        "numbers": false,
+        "payback": 1
+    },
+    {
+        "type": "even",
+        "numbers": false,
+        "payback": 1
+    },
+    {
+        "type": "high",
+        "numbers": false,
+        "payback": 1
+    },
+    {
+        "type": "low",
+        "numbers": false,
+        "payback": 1
+    },
+    {
+        "type": "zero",
+        "numbers": false,
+        "payback": 70
+    }
+]

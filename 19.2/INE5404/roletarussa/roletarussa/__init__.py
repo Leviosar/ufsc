@@ -1,18 +1,27 @@
+from tkinter import *
+from PIL import Image, ImageTk
 from Entities.AmericanRoulette import AmericanRoulette
-import sys, pygame
-pygame.init()
-size = width, height = 320, 240
-speed = [2, 2]
-black = 0, 0, 0
+from Entities.EuropeanRoulette import EuropeanRoulette
+from Entities.Game import Game
+from Entities.Player import Player
+from Entities.Casino import Casino
+from GUI.Application import Application
+import sys
 
-screen = pygame.display.set_mode(size)
-roulette = AmericanRoulette()
-ball = pygame.image.load("./Assets/intro_ball.gif")
-ballrect = ball.get_rect()
+roulette = None
 
-while  True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT: sys.exit()
-    screen.fill(0, 0, 0)
-    screen.blit(ball, ballrect)
-    pygame.display.flip()
+if len(sys.argv) >= 2:
+    if sys.argv[1] == '-e':
+        roulette = EuropeanRoulette()
+    else:
+        roulette = AmericanRoulette()
+else: 
+    roulette = AmericanRoulette()
+
+casino = Casino()
+game = Game(roulette, casino)
+root = Tk()
+root.attributes('-fullscreen', True)
+app = Application(master=root, roulette=roulette, game_controller=game)
+game.set_gui(gui=app)
+root.mainloop()

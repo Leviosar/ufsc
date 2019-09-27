@@ -1,17 +1,17 @@
+import json
+
 class Player():
-    def __init__(self):
+    def __init__(self, name):
         self.stakes = 100
+        self.name = name
         self.passed = 0
-    
-    def bet(self, amount):
-        return amount
     
     def can_pass(self):
         if self.passed <= 3:
-            return true
-        else
-            return false
+            return True
+        else:
+            return False
     
     def modify_stakes(self, amount):
-        this.stakes += amount
+        self.stakes += amount
         
