@@ -1,0 +1,9 @@
+Total logic elements: 170 / 33,216 ( < 1 % )
+Total combinational functions: 170 / 33,216 ( < 1 % )
+Dedicated logic registers: 0 / 33,216 ( 0 % )
+
+Total registers: 0
+Total pins: 104 / 475 ( 22 % )
+
+Propagation delay: input - funct[3], output - s[24], delay - 17.838
+Minimum propagation delay: input - funct[3], output - s[27], delay - 16.175
