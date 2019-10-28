@@ -3,5 +3,4 @@
 - Aula 01 - Não fui
 - Aula 02 - Exercícios idiotas e contextualização da disciplina
 
-
-## Material de estudo
+## Material de estudotrabal
