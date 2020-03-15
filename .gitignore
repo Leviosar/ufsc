@@ -1,9 +1,9 @@
-*/db/
-*/incremental_db/
-*/simulation/
-*/timing/
-*/testbench/
-*/*_sim/
+**/db
+**/incremental_db/
+**/simulation/
+**/timing/
+**/testbench/
+**/*_sim/
 *.bak
 *_generation_script*
 *_inst.vhd
@@ -19,6 +19,8 @@
 *.qar
 *.qarlog
 *.qws
+*.qpf
+*.qsf
 *.rpt
 *.smsg
 *.sof
