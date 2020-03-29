@@ -27,3 +27,4 @@
 *.sopc_builder
 *.summary
 *.tcl
+.vscode/
