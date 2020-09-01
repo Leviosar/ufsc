@@ -44,3 +44,14 @@ Turma B: terça - 15h20;  quarta - 14h20
 | 09-10 DEZ      |	Prova Prática II                                                |
 | 15 DEZ         |	Prova Teórica Substitutiva (opcional)                           |
 | 16-17 DEZ      |	Relatório do Projeto II                                         |
+
+### Trabalhos
+
+Durante a disciplina, diversos trabalhos menores são realizados, sendo a maioria deles a implementação da estrutura de dados estudada no momento. Os trabalhos são implementados em C++ e devem ser documentados (vale nota). Pra testar localmente, um script shell `avaliate` é disponibilizado pelo professor.
+
+- Colocar o avaliate, a sua implementação do exercício (por exemplo: array_stack.h) e a implementação disponibilizada para os testes (por exemplo: tests_array_stack.cpp) em uma mesma pasta
+
+- Executar. Por exemplo:
+```bash
+> ./avaliate tests_array_stack
+```
