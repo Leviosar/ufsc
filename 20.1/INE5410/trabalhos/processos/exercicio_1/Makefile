@@ -64,15 +64,9 @@ build/program: $(OBJS)
 # Prepara .tar.gz pra submissão no moodle
 # Note que antes de preparar o tar.gz, é feito um clean
 submission: 
-	./grade-atividade_1.sh || true
-	@rm -fr build $(OUTPUT)
-	@SUBNAME=$$(basename "$$(pwd)"); \
-		echo cd ..\; tar zcf "$$SUBNAME.tar.gz" "$$SUBNAME"
-	@SUBNAME=$$(basename "$$(pwd)"); \
-		cd ..; \
-		rm -fr "$$SUBNAME.tar.gz"; \
-		tar zcf "$$SUBNAME.tar.gz" "$$SUBNAME"
-	@echo "Criado pacote \"$$(pwd).tar.gz\" para submissão"
+	@echo "Calma, jovem. Você precisa criar um único pacote com todos os 4 exercícios da atividade."
+	@echo "Vá em .. (cd ..) e digite make submission lá"
+	@false
 
 # Limpa binários
 clean:
