@@ -10,3 +10,4 @@ Anotações simples e um resuminho do que foi cada aula, eu NÃO usaria isso com
 - [Mutexes](./mutexes/README.md)
 - [Semáforos](./semaforos/README.md)
 - [Impasses](./deadlocks/README.md)
+- [Problemas clássicos sobre impasses](./deadlocks/README.md)
