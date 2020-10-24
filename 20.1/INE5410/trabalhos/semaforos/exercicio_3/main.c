@@ -6,18 +6,16 @@
 
 FILE* out;
 
-sem_t a, b, file;
+sem_t a, b;
 
 void *thread_a(void *args) {
     for (int i = 0; i < *(int*)args; ++i) {
         sem_wait(&a);
-        sem_wait(&file);
 
         fprintf(out, "A");
         fflush(stdout);
 
         sem_post(&b);
-        sem_post(&file);
     }
     return NULL;
 }
@@ -25,13 +23,11 @@ void *thread_a(void *args) {
 void *thread_b(void *args) {
     for (int i = 0; i < *(int*)args; ++i) {
         sem_wait(&b);
-        sem_wait(&file);
 
         fprintf(out, "B");
         fflush(stdout);
 
         sem_post(&a);
-        sem_post(&file);
     }
     return NULL;
 }
@@ -52,7 +48,6 @@ int main(int argc, char** argv) {
     // binários. Se puder responda nos comentários da correção <3
     sem_init(&a, 0, 1);
     sem_init(&b, 0, 1);
-    sem_init(&file, 0, 1);
 
     // Cria threads
     pthread_create(&ta, NULL, thread_a, &iters);
@@ -64,7 +59,6 @@ int main(int argc, char** argv) {
 
     sem_destroy(&a);
     sem_destroy(&b);
-    sem_destroy(&file);
 
     //Imprime quebra de linha e fecha arquivo
     fprintf(out, "\n");

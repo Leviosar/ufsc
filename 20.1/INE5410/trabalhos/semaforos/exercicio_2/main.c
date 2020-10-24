@@ -6,8 +6,8 @@
 #include <time.h>
 #include <semaphore.h>
 
-int produzir(int value);    //< definida em helper.c
-void consumir(int produto); //< definida em helper.c
+int produzir(int value);
+void consumir(int produto);
 void *produtor_func(void *arg);
 void *consumidor_func(void *arg);
 
@@ -30,6 +30,8 @@ void *produtor_func(void *arg) {
         // Então criei uma lógica no consumidor pra que consumissem
         // apenas a quantidade que foi produzida, então aqui ao invés
         // de produzir -1 eu dou um break nas threads produtoras. 
+        // Acho que isso diminui o paralelismo do programa em algum nível
+        // mas minhas outras soluções todas falharam miseravelmente
         if (i == max) {
             break;
         } else {
@@ -82,20 +84,17 @@ int main(int argc, char *argv[]) {
     }
 
     tamanho_buffer = atoi(argv[1]);
+    
     int itens = atoi(argv[2]);
     int n_produtores = atoi(argv[3]);
     int n_consumidores = atoi(argv[4]);
+
     printf("itens=%d, n_produtores=%d, n_consumidores=%d\n",
 	   itens, n_produtores, n_consumidores);
 
-    //Iniciando buffer
     indice_produtor = 0;
     indice_consumidor = 0;
     buffer = malloc(sizeof(int) * tamanho_buffer);
-
-    // Crie threads e o que mais for necessário para que n_produtores
-    // threads criem cada uma n_itens produtos e o n_consumidores os
-    // consumam.
 
     sem_init(&full, 0, 0);
 	sem_init(&empty, 0, tamanho_buffer);
@@ -131,8 +130,8 @@ int main(int argc, char *argv[]) {
         pthread_join(consumers[i], NULL);
     }
     
-    //Libera memória do buffer
     free(buffer);
+
     sem_destroy(&empty);
     sem_destroy(&full);
     sem_destroy(&producer_lock);
