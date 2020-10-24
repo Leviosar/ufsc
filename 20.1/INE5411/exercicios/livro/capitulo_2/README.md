@@ -1,5 +1,114 @@
 # Capítulo 2 - Instructions: Language of the Computer
 
+### 2.9
+
+Translate the following C code to MIPS. Assume that the variables f, g, h, i, and j are assigned to registers $s0, $s1, $s2, $s3, and $s4, respectively. Assume that the base address of the arrays A and B are in registers $s6 and $s7, respectively. Assume that the elements of the arrays A and B are 4-byte words: 
+
+```c
+B[8] = A[i] + A[j];
+```
+
+Resposta:
+
+```assembly
+add $t0, $s6, $s3   # $t0 = base A + i
+lw $t1, 0($t0)      # $t1 = MEM[$t0]
+add $t2, $s6, $s4   # $t2 = base A + j 
+lw $t3, 0($t2)      # $t3 = MEM[$t2]
+add $t4, $t1, $t2   # $t4 = A[i] + A[j]
+sw $t4, 32($s7)     # MEM[$s7 + 32] = $t4
+```
+
+### 2.12
+
+Assume that registers `$s0` and `$s1` hold the values `0x80000000` and `0xD0000000`, respectively. 
+
+`$s0 = 1000 0000 0000 0000 0000 0000 0000 0000`
+`$s1 = 1101 0000 0000 0000 0000 0000 0000 0000`
+
+#### 2.12.1
+
+What is the value of $t0 for the following assembly code? 
+
+```assembly
+add $t0, $s0, $s1
+```
+
+Resposta: o resultado da soma, é `0x150000000`, mas como o registrador representará no máximo 32 bits (ou 8 caracteres hexadecimais), temos `0x5000000`.
+
+#### 2.12.2
+
+Is the result in $t0 the desired result, or has there been overflow? 
+
+Resposta: houve overflow
+
+#### 2.12.3
+
+For the contents of registers $s0 and $s1 as specified above, what is the value of $t0 for the following assembly code? 
+
+```assembly
+sub $t0, $s0, $s1
+```
+
+` s0 = 1000 0000 0000 0000 0000 0000 0000 0000`
+`~s1 = 0010 1111 1111 1111 1111 1111 1111 1111`
+
+Resposta: faremos a conta `$s0 - $s1`, mas na verdade o que queremos é `$s0 + (- $s1)`, e pra isso vamos encontrar o complemento de 2 de `$s1`.
+
+```
+1. 1101 0000 0000 0000 0000 0000 0000 0000 # negamos todos os bits
+2. 0010 1111 1111 1111 1111 1111 1111 1111 # somamos 1 (vários carrys depois)
+3. 0011 0000 0000 0000 0000 0000 0000 0000 # prontinho
+```
+
+Agora que já temos `-$s1`, podemos fazer `$s0 + (- $s1)`
+
+```
+    1000 0000 0000 0000 0000 0000 0000 0000
+    +
+    0011 0000 0000 0000 0000 0000 0000 0000
+    ---------------------------------------
+    1011 0000 0000 0000 0000 0000 0000 0000
+```
+
+Convertendo novamente pra hexadecimal temos `0xB000000`
+
+#### 2.12.4
+
+Is the result in $t0 the desired result, or has there been overflow? 
+
+Resposta: não houve overflow.
+
+#### 2.12.5
+
+For the contents of registers $s0 and $s1 as specified above, what is the value of $t0 for the following assembly code? 
+
+```assembly
+add $t0, $s0, $s1 
+add $t0, $t0, $s0 
+```
+
+Operação: (0x80000000 + 0xD0000000) + 0x80000000
+
+Resposta: 
+```
+0x80000000
++
+0xD0000000
+----------
+0x50000000
++
+0x80000000
+----------
+0xD0000000
+```
+
+#### 2.12.6
+
+Is the result in $t0 the desired result, or has there been overflow?
+
+Resposta: houve overflow.
+
 ### 2.19
 
 Assume the following register contents:
