@@ -25,8 +25,8 @@ Semestre iniciado no começo de 2020, com fim planejado pra sabe-se lá quando (
 | Código | Turma   | Discipina | Professor(es) |
 |--------|---------|-----------|---------------| 
 |INE5407 | 	02208B | Ciência, Tecnologia e Sociedade | Lúcia Helena Martins Pacheco |
-| [INE5408](./INE5408) | 	03208A | Estruturas de Dados | Aldo Von Wangenheim Alexandre Gonçalves Silva | 
-| [INE5410](./INE5410) | 	03208A | Programação Concorrente | Odorico Machado Mendizabal Márcio Bastos Castro |
-| [INE5411](./INE5411) | 	03208C | Organização de Computadores | Luiz Claudio Villar dos Santos |
+| [INE5408](https://github.com/Leviosar/ine5408) | 	03208A | Estruturas de Dados | Aldo Von Wangenheim Alexandre Gonçalves Silva | 
+| [INE5410](https://github.com/Leviosar/ine540) | 	03208A | Programação Concorrente | Odorico Machado Mendizabal Márcio Bastos Castro |
+| [INE5411](https://github.com/Leviosar/ine5411) | 	03208C | Organização de Computadores | Luiz Claudio Villar dos Santos |
 |MTM3102 | 	02201  | Cálculo 2 | Oscar Ricardo Janesch |
-| [MTM5245](./MTM5245) | 	03208  | Álgebra Linear | Paulo Mendes de Carvalho Neto |
+| MTM5245 | 	03208  | Álgebra Linear | Paulo Mendes de Carvalho Neto |
