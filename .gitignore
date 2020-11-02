@@ -28,3 +28,6 @@
 *.summary
 *.tcl
 .vscode/
+
+/20.1/INE5408/trabalhos/xml_binary_image/html
+/20.1/INE5408/trabalhos/xml_binary_image/latex
