@@ -10,3 +10,15 @@
 [submodule "20.1/ine5411"]
 	path = 20.1/ine5411
 	url = https://github.com/Leviosar/ine5411
+[submodule "20.2/ine5414"]
+	path = 20.2/ine5414
+	url = https://github.com/leviosar/ine5414
+[submodule "20.2/ine5417"]
+	path = 20.2/ine5417
+	url = https://github.com/Leviosar/ine5417
+[submodule "20.2/ine5416"]
+	path = 20.2/ine5416
+	url = https://github.com/Leviosar/ine5416
+[submodule "20.2/ine5613"]
+	path = 20.2/ine5613
+	url = https://github.com/Leviosar/ine5613
