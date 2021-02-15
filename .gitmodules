@@ -22,3 +22,6 @@
 [submodule "20.2/ine5613"]
 	path = 20.2/ine5613
 	url = https://github.com/Leviosar/ine5613
+[submodule "20.2/ine5411"]
+	path = 20.2/ine5411
+	url = https://github.com/leviosar/ine5411
