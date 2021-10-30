@@ -40,3 +40,21 @@
 [submodule "21.1/ine5412"]
 	path = 21.1/ine5412
 	url = https://github.com/leviosar/ine5412
+[submodule "21.2/ine5418"]
+	path = 21.2/ine5418
+	url = git@github.com:Leviosar/ine5418.git
+[submodule "21.2/ine5421"]
+	path = 21.2/ine5421
+	url = git@github.com:Leviosar/ine5421.git
+[submodule "21.2/ine5422"]
+	path = 21.2/ine5422
+	url = git@github.com:Leviosar/ine5422.git
+[submodule "21.2/ine5424"]
+	path = 21.2/ine5424
+	url = git@github.com:Leviosar/ine5424.git
+[submodule "21.2/ine5431"]
+	path = 21.2/ine5431
+	url = git@github.com:Leviosar/ine5431.git
+[submodule "21.2/ine5432"]
+	path = 21.2/ine5432
+	url = git@github.com:Leviosar/ine5432.git
